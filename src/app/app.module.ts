@@ -4,16 +4,25 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { FacebookModule } from 'ngx-facebook';
 
+import {AppRoutingModule} from './app.routing';
+
 import { AppComponent } from './app.component';
+import {LoginComponent} from './components/login/login.component';
+import {HomeComponent} from './components/home/home.component';
+import {TestComponent} from './components/test/test.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    HomeComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    AppRoutingModule,
     FacebookModule.forRoot()
   ],
   providers: [],
