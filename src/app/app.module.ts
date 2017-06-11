@@ -9,6 +9,9 @@ import {AppRoutingModule} from './app.routing';
 import { AppComponent } from './app.component';
 import {LoginComponent} from './components/login/login.component';
 import {HomeComponent} from './components/home/home.component';
+import {HomeProductsComponent} from './components/home-products/home-products.component';
+import {ProductListComponent} from './components/product-list/product-list.component';
+import {ProductComponent} from './components/product/product.component';
 import {TestComponent} from './components/test/test.component';
 
 import {UserService} from './services/user.service';
@@ -19,6 +22,9 @@ import {ProductService} from './services/product.service';
     AppComponent,
     LoginComponent,
     HomeComponent,
+    HomeProductsComponent,
+    ProductListComponent,
+    ProductComponent,
     TestComponent
   ],
   imports: [
