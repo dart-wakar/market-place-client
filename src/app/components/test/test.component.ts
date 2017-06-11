@@ -1,5 +1,6 @@
 import {Component,OnInit} from '@angular/core';
 import {ProductService} from '../../services/product.service';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'test',
@@ -9,7 +10,7 @@ import {ProductService} from '../../services/product.service';
 export class TestComponent implements OnInit {
     componentName = 'Test'
 
-    constructor(private productService: ProductService) {}
+    constructor(private productService: ProductService,private router: Router) {}
 
     ngOnInit() {
         this.getProductListForUser('hdy71y81u9e91i0ei19ujidqi');
@@ -20,5 +21,9 @@ export class TestComponent implements OnInit {
             .subscribe(products => {
                 console.log(products);
             },err => console.log(err));
+    }
+
+    goToLogin() {
+        this.router.navigate(['/login']);
     }
 }
