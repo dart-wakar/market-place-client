@@ -13,11 +13,11 @@ export class TestComponent implements OnInit {
     constructor(private productService: ProductService,private router: Router) {}
 
     ngOnInit() {
-        this.getProductListForUser('hdy71y81u9e91i0ei19ujidqi');
+        this.getSoldProductListForUser('1931565307060093');
     }
 
-    getProductListForUser(fb_id: string) {
-        this.productService.getProductListForCurrentUser(fb_id)
+    getSoldProductListForUser(fb_id: string) {
+        this.productService.getProductsSoldByUser(fb_id)
             .subscribe(products => {
                 console.log(products);
             },err => console.log(err));

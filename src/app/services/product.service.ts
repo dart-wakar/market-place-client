@@ -83,4 +83,15 @@ export class ProductService {
                             return Observable.throw(err.json() || 'Server Error')
                         });
     }
+
+    getProductsSoldByUser(fb_id: string) {
+        let header = new Headers();
+        header.append("Content-Type","application/json");
+        return this.http.post(this.ProductsUrl+"sold",JSON.stringify({fb_id: fb_id}),{headers: header})
+                        .map((res) => res.json())
+                        .catch((err) => {
+                            console.log(err);
+                            return Observable.throw(err.json() || 'Server Error')
+                        });
+    }
 }
