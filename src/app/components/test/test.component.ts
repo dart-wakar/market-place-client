@@ -12,11 +12,11 @@ export class TestComponent implements OnInit {
     constructor(private userService: UserService) {}
 
     ngOnInit() {
-        this.getOrCreateUser('bhxbabuchaiuhui16w7gudun','Aayush','Chaudhary','aayush@gmail.com');
+        this.getUserDetails('593c8a67b91c280b4461884e');
     }
 
-    getOrCreateUser(fb_id:string,first_name: string,last_name: string,email: string) {
-        this.userService.getOrCreateUser(fb_id,first_name,last_name,email)
+    getUserDetails(user_id:string) {
+        this.userService.getUserDetails(user_id)
             .subscribe(user => {
                 console.log(user);
             },err => console.log(err));

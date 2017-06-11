@@ -30,4 +30,13 @@ export class UserService {
                             return Observable.throw(err.json() || 'Server Error')
                         });
     }
+
+    getUserDetails(user_id:string) {
+        return this.http.get(this.UsersUrl+user_id)
+                        .map((res) => res.json())
+                        .catch((err) => {
+                            console.log(err);
+                            return Observable.throw(err.json() || 'Server Error')
+                        });
+    }
 }
