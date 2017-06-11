@@ -56,6 +56,7 @@ export class LoginComponent {
                         .subscribe(user => {
                             console.log(user);
                             this.myuser = user;
+                            localStorage.setItem("current_user_id",this.myuser._id);
                             this.router.navigate(['/home']);
                         },err => console.log(err));
                 })

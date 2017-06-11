@@ -12,6 +12,7 @@ import {HomeComponent} from './components/home/home.component';
 import {HomeProductsComponent} from './components/home-products/home-products.component';
 import {ProductListComponent} from './components/product-list/product-list.component';
 import {ProductComponent} from './components/product/product.component';
+import {ProductCreateComponent} from './components/product-create/product-create.component';
 import {TestComponent} from './components/test/test.component';
 
 import {UserService} from './services/user.service';
@@ -25,6 +26,7 @@ import {ProductService} from './services/product.service';
     HomeProductsComponent,
     ProductListComponent,
     ProductComponent,
+    ProductCreateComponent,
     TestComponent
   ],
   imports: [
