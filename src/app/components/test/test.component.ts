@@ -1,5 +1,5 @@
 import {Component,OnInit} from '@angular/core';
-import {UserService} from '../../services/user.service';
+import {ProductService} from '../../services/product.service';
 
 @Component({
     selector: 'test',
@@ -9,16 +9,16 @@ import {UserService} from '../../services/user.service';
 export class TestComponent implements OnInit {
     componentName = 'Test'
 
-    constructor(private userService: UserService) {}
+    constructor(private productService: ProductService) {}
 
     ngOnInit() {
-        this.getUserDetails('593c8a67b91c280b4461884e');
+        this.getProductListForUser('hdy71y81u9e91i0ei19ujidqi');
     }
 
-    getUserDetails(user_id:string) {
-        this.userService.getUserDetails(user_id)
-            .subscribe(user => {
-                console.log(user);
+    getProductListForUser(fb_id: string) {
+        this.productService.getProductListForCurrentUser(fb_id)
+            .subscribe(products => {
+                console.log(products);
             },err => console.log(err));
     }
 }

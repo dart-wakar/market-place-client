@@ -12,6 +12,7 @@ import {HomeComponent} from './components/home/home.component';
 import {TestComponent} from './components/test/test.component';
 
 import {UserService} from './services/user.service';
+import {ProductService} from './services/product.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {UserService} from './services/user.service';
     FacebookModule.forRoot()
   ],
   providers: [
-    UserService
+    UserService,
+    ProductService
   ],
   bootstrap: [AppComponent]
 })
