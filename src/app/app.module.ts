@@ -11,6 +11,8 @@ import {LoginComponent} from './components/login/login.component';
 import {HomeComponent} from './components/home/home.component';
 import {TestComponent} from './components/test/test.component';
 
+import {UserService} from './services/user.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +27,9 @@ import {TestComponent} from './components/test/test.component';
     AppRoutingModule,
     FacebookModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
