@@ -90,4 +90,12 @@ export class ProductDetailsComponent implements OnInit,OnChanges {
                 this.getProductDetailsFromRoute();
             },err => console.log(err));
     }
+
+    deleteProduct() {
+        this.productService.deleteProduct(this.product._id)
+            .subscribe(res => {
+                console.log(res);
+                this.router.navigate(['/home']);
+            },err => console.log(err));
+    }
 }
