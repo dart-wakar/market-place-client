@@ -1,4 +1,4 @@
-import {Component,OnInit} from '@angular/core';
+import {Component,OnInit,OnChanges} from '@angular/core';
 import {ActivatedRoute,Params,Router} from '@angular/router';
 import {Location} from '@angular/common';
 import {ProductService} from '../../services/product.service';
@@ -9,11 +9,12 @@ import 'rxjs/add/operator/switchMap';
     templateUrl: './product-details.component.html'
 })
 
-export class ProductDetailsComponent implements OnInit {
+export class ProductDetailsComponent implements OnInit,OnChanges {
 
     ifCreatedBy: boolean;
     ifCreatedByResolved: boolean;
     product:any;
+    viewMode: boolean;
 
     constructor(
         private productService: ProductService,
@@ -23,6 +24,12 @@ export class ProductDetailsComponent implements OnInit {
     ) {}
 
     ngOnInit() {
+        this.viewMode = true;
+        this.getProductDetailsFromRoute();
+    }
+
+    ngOnChanges() {
+        this.viewMode = true;
         this.getProductDetailsFromRoute();
     }
 
@@ -50,4 +57,12 @@ export class ProductDetailsComponent implements OnInit {
         this.location.back();
     }
 
+    editProduct() {
+        this.viewMode = false;
+    }
+
+    onEditToView(flag:boolean) {
+        this.viewMode = flag;
+        this.getProductDetailsFromRoute();
+    }
 }

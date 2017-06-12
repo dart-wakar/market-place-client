@@ -1,12 +1,17 @@
-<h1>Product Details</h1>
 <div *ngIf = "product">
-    <div *ngIf = "ifCreatedByResolved">
-        <button *ngIf = "ifCreatedBy">Edit</button>
-        <button *ngIf = "!ifCreatedBy">Buy</button>
-        <button (click) = "goBack()">Go Back</button>
+    <div *ngIf = "viewMode">
+        <h1>Product Details</h1>
+        <div *ngIf = "ifCreatedByResolved">
+            <button *ngIf = "ifCreatedBy" (click) = "editProduct()">Edit</button>
+            <button *ngIf = "!ifCreatedBy" (click) = "buyProduct()">Buy</button>
+            <button (click) = "goBack()">Go Back</button>
+        </div>
+        <h3>{{product.title}}</h3><br>
+        <span>Description: {{product.description}}</span><br>
+        <span>Category: {{product.category}}</span><br>
+        <span>Price: {{product.price.amount}}</span><span>{{product.price.currency}}</span>
     </div>
-    <h3>{{product.title}}</h3><br>
-    <span>Description: {{product.description}}</span><br>
-    <span>Category: {{product.category}}</span><br>
-    <span>Price: {{product.price.amount}}</span><span>{{product.price.currency}}</span>
+    <div *ngIf = "!viewMode">
+        <product-edit [product] = "product" (onEditingDoneOrCancelled) = "onEditToView($event)"></product-edit>
+    </div>
 </div>
