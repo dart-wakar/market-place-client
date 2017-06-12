@@ -8,7 +8,7 @@ import {ProductDetailsComponent} from './components/product-details/product-deta
 import {TestComponent} from './components/test/test.component';
 
 const routes: Routes = [
-    {path: '',redirectTo: 'test',pathMatch: 'full'},
+    {path: '',redirectTo: 'login',pathMatch: 'full'},
     {path: 'login',component: LoginComponent},
     {path: 'home',component: HomeComponent},
     {path: 'products/add',component: ProductCreateComponent},

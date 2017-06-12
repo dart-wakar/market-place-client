@@ -28,7 +28,7 @@ export class HomeComponent {
         this.fb.logout().then((res:any) => {
             console.log(res);
             localStorage.clear();
-            this.router.navigate(['/test']);
+            this.router.navigate(['/login']);
         })
         .catch(this.handleError);
     }
