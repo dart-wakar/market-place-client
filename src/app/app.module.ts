@@ -14,6 +14,7 @@ import {ProductListComponent} from './components/product-list/product-list.compo
 import {ProductComponent} from './components/product/product.component';
 import {ProductCreateComponent} from './components/product-create/product-create.component';
 import {SoldProductsComponent} from './components/sold-products/sold-products.component';
+import {ProductDetailsComponent} from './components/product-details/product-details.component';
 import {TestComponent} from './components/test/test.component';
 
 import {UserService} from './services/user.service';
@@ -29,6 +30,7 @@ import {ProductService} from './services/product.service';
     ProductComponent,
     ProductCreateComponent,
     SoldProductsComponent,
+    ProductDetailsComponent,
     TestComponent
   ],
   imports: [

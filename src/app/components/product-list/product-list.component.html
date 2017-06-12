@@ -1,5 +1,5 @@
 <div *ngIf = "products">
     <ul>
-        <product *ngFor = "let product of products" [product] = "product"></product>
+        <product *ngFor = "let product of products" [product] = "product" (click) = "goToDetails(product._id)"></product>
     </ul>
 <div>
