@@ -1,9 +1,9 @@
 <div *ngIf = "product">
     <div *ngIf = "viewMode">
         <h1>Product Details</h1>
-        <div *ngIf = "ifCreatedByResolved">
+        <div *ngIf = "ifCreatedByResolved && ifAlreadyBoughtResolved">
             <button *ngIf = "ifCreatedBy" (click) = "editProduct()">Edit</button>
-            <button *ngIf = "!ifCreatedBy" (click) = "buyProduct()">Buy</button>
+            <button *ngIf = "!ifCreatedBy && !ifAlreadyBought" (click) = "buyProduct()">Buy</button>
             <button (click) = "goBack()">Go Back</button>
         </div>
         <h3>{{product.title}}</h3><br>
