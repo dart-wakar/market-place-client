@@ -3,7 +3,7 @@ import {ProductService} from '../../services/product.service';
 
 @Component({
     selector: 'home-products',
-    templateUrl: '/home-products.component.html'
+    templateUrl: './home-products.component.html'
 })
 
 export class HomeProductsComponent implements OnInit {
