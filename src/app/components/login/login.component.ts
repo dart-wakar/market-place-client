@@ -27,7 +27,7 @@ export class LoginComponent {
     }
 
     login() {
-        this.fb.login().then((res: LoginResponse) => {
+        this.fb.login({scope: 'public_profile,user_friends,email,user_birthday'}).then((res: LoginResponse) => {
             console.log("Logged in ",res);
             this.fb_id = res.authResponse.userID;
             this.accessToken = res.authResponse.accessToken;
